@@ -14,21 +14,21 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname,"/public")));
-app.use(express.static(path.join(__dirname, "/public/index.js")));
-app.use(express.static(path.join(__dirname, "/public/styles.css")));
+app.use(express.static(path.join(__dirname,"./Develop/public")));
+app.use(express.static(path.join(__dirname, "./Develop/public/index.js")));
+app.use(express.static(path.join(__dirname, "./Develop/public/styles.css")));
 
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "public/notes.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
 });
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, './public/index.js'));
-});
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, './public/index.js'));
+// });
 
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "public/index.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
 });
 
 
